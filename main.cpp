@@ -103,11 +103,9 @@ LRESULT CALLBACK keyboardHandler(int nCode, WPARAM wParam, LPARAM lParam) {
 		break;//break from wParam switch
 	case WM_KEYUP:
 	case WM_SYSKEYUP:
-		if (p->vkCode == VK_CAPITAL) {
-			if (releaseAltOnCapslockRelease) {
-				releaseAltOnCapslockRelease = false;
-				keybd_event(VK_MENU, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0);
-			}
+		if (p->vkCode == VK_CAPITAL && releaseAltOnCapslockRelease) {
+			releaseAltOnCapslockRelease = false;
+			keybd_event(VK_MENU, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0);
 		}
 		break;
 	}
