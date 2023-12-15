@@ -7,7 +7,6 @@ commands
 	setScrollLockState 0/1/2 | n/t/y
 */
 
-#include "main.h"
 #include <vector>
 #include <windows.h>
 #include <iostream>
